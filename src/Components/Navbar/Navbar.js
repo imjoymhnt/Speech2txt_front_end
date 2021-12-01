@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Button from "./Button";
 import menuItems from "./MenuItems";
 import "./Navbar.css";
+import logo from "./1611916878678.jpg";
 
 const Navbar = () => {
   const [active, setActive] = useState(false);
@@ -13,7 +14,7 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <h1 className="navbar-logo">
-        React <i className="fab fa-react"></i>
+        <img src={logo} />
       </h1>
       <div className="menu-icon" onClick={handleClick}>
         <i className={active ? "fas fa-times" : "fas fa-bars"}></i>
@@ -29,7 +30,6 @@ const Navbar = () => {
           );
         })}
       </ul>
-      <Button>SIGN UP</Button>
     </nav>
   );
 };
