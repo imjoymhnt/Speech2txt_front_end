@@ -3,10 +3,10 @@ import { Form, Input, Button, Checkbox, Row, Col } from "antd";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const history = useNavigate();
+  const navigate = useNavigate();
   const onFinish = (values) => {
     console.log("Success:", values);
-    history.push("/voice");
+    navigate("/voice");
   };
 
   const onFinishFailed = (errorInfo) => {
