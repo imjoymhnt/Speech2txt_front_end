@@ -5,6 +5,7 @@ import Login from "./Components/Authentication/Login";
 import Navbar from "./Components/Navbar/Navbar";
 import Header from "./Components/Navbar/Header";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import TranscriptionForm from "./Components/Transcription/TranscriptionForm";
 
 function App() {
   return (
@@ -19,7 +20,8 @@ function App() {
           <Route
             path="/voice"
             element={
-              <MindAudioPlayer audioUrl="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" />
+              // <MindAudioPlayer audioUrl="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" />
+              <TranscriptionForm />
             }
             exact
           />
