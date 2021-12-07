@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { Row, Col } from "antd";
-import Button from "./Button";
 import menuItems from "./MenuItems";
 import "./Navbar.css";
-import logo from "./1611916878678.jpg";
+import logo from "./logo.png";
 
 const Navbar = () => {
   const [active, setActive] = useState(false);

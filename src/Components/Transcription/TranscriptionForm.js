@@ -6,6 +6,7 @@ import Loader from "../Loader";
 import "./style.css";
 import Viewer from "./Viewer";
 import MindAudioPlayer from "../MindAudioPlayer";
+import Background from "../Animation/Background";
 
 const TranscriptionForm = () => {
   const [form] = Form.useForm();
@@ -47,7 +48,16 @@ const TranscriptionForm = () => {
 
   return (
     <Row gutter={15}>
-      <Col xl={12} offset={6} className="form-container">
+      <Background />
+      <Col
+        xs={{ span: 12, offset: 2 }}
+        sm={{ span: 12, offset: 2 }}
+        md={{ span: 12, offset: 2 }}
+        lg={{ span: 12, offset: 6 }}
+        xl={{ span: 12, offset: 6 }}
+        xxl={{ span: 12, offset: 6 }}
+        className="form-container"
+      >
         <AnimatePresence>
           {loading ? null : (
             <motion.div

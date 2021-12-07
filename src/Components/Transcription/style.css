@@ -7,20 +7,18 @@
 
 .form {
   /* background-color: rgb(215, 244, 253); */
-  background: #757f9a; /* fallback for old browsers */
+  background: #7ac0fd; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to right,
-    #d7dde8,
-    #757f9a
+    #fffde4,
+    #7ac0fd
   ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #d7dde8,
-    #757f9a
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right, #fffde4, #7ac0fd);
 
   margin: 0 3rem;
   padding: 3rem;
   border-radius: 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  /* position: absolute; */
+  /* z-index: -1; */
 }

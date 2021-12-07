@@ -1,3 +1,19 @@
+body {
+  background: #2980b9; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #ffffff,
+    #6dd5fa,
+    #2980b9
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #ffffff,
+    #6dd5fa,
+    #2980b9
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
 .topShape {
   position: absolute;
   /* top: 0; */
@@ -20,24 +36,22 @@
 }
 
 #form {
-  background: #7f7fd5; /* fallback for old browsers */
+  background: #7ac0fd; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to right,
-    #91eae4,
-    #86a8e7,
-    #7f7fd5
+    #fffde4,
+    #7ac0fd
   ); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(
     to right,
-    #91eae4,
-    #86a8e7,
-    #7f7fd5
+    #fffde4,
+    #7ac0fd
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
   margin: 0 1rem;
   padding: 3rem 1rem;
   border-radius: 10px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.2), 0 12px 24px 0 rgba(0, 0, 0, 0.19);
   /* float: initial; */
   width: 90%;
   height: auto;

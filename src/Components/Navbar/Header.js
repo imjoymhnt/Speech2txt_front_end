@@ -9,7 +9,12 @@ const Header = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6 }}
-          style={{ fontSize: "3rem" }}
+          style={{
+            fontSize: "3rem",
+            color: "#fff",
+            marginTop: "-3rem",
+            paddingTop: "-3rem",
+          }}
         >
           Mind Voys
         </motion.h1>

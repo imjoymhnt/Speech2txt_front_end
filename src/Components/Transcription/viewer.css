@@ -1,0 +1,31 @@
+.spkr-txt {
+  font-size: 1rem;
+  text-align: left;
+  color: rgb(17, 17, 17);
+}
+.spkr-txt:hover {
+  /* font-size: 2rem; */
+  /* transition-duration: 0.4s; */
+}
+
+#text-container {
+  background: #7ac0fd; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #fffde4,
+    #7ac0fd
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #fffde4,
+    #7ac0fd
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  margin: 1rem 1rem 1rem 6%;
+  padding: 3rem 2rem 3rem 0;
+  border-radius: 10px;
+  box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.2), 0 12px 24px 0 rgba(0, 0, 0, 0.19);
+  /* float: initial; */
+  width: 100%;
+  height: auto;
+}
