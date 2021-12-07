@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Row, Col, Button, Form } from "antd";
 import axios from "axios";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Loader from "../Loader";
 import "./style.css";
 import Viewer from "./Viewer";
 import MindAudioPlayer from "../MindAudioPlayer";
-import Rotator from "../Animation/Rotator";
 
 const TranscriptionForm = () => {
   const [form] = Form.useForm();
@@ -49,66 +48,77 @@ const TranscriptionForm = () => {
   return (
     <Row gutter={15}>
       <Col xl={12} offset={6} className="form-container">
-        <Rotator />
-        {loading ? null : (
-          <motion.div
-            // animate={{ rotate: 5 }}
-            // transition={{ duration: 2 }}
-            whileHover={{
-              scale: 1.1,
-              transition: { duration: 0.6 },
-            }}
-            drag="x"
-            dragConstraints={{ left: -100, right: 100 }}
-            whileTap={{ scale: 0.9 }}
-          >
-            <Form
-              className="form"
-              style={{ width: "100%" }}
-              form={form}
-              // name="addProduct"
-              onFinish={handleSubmit}
+        <AnimatePresence>
+          {loading ? null : (
+            <motion.div
+              initial={{ x: -1000, opacity: 0 }}
+              animate={{
+                x: [-1000, 80, 0],
+                opacity: 1,
+                // rotate: [0, 5, -5, 5, 0],
+                // scale: [1, 2, 2, 1, 1],
+              }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 2 }}
+              // animate={{ rotate: 5 }}
+              // transition={{ duration: 2 }}
+              whileHover={{
+                scale: 1.1,
+                transition: { duration: 0.6 },
+              }}
+              drag="x"
+              dragConstraints={{ left: -100, right: 100 }}
+              whileTap={{ scale: 0.9 }}
             >
-              <Form.Item>
-                <h4 style={{ marginRight: "auto", marginLeft: "-82%" }}>
-                  <u>Upload Audio file</u>..
-                </h4>
-                <input
-                  //   fileName="image"
-                  name="img"
-                  onChange={onChangeFile}
-                  type="file"
-                />
-              </Form.Item>
-              <Form.Item>
-                {fileName ? (
-                  <Button
-                    style={{ marginRight: "auto", marginLeft: "-87%" }}
-                    size="large"
-                    htmlType="submit"
-                    type="primary"
-                    raised
-                  >
-                    Submit
-                  </Button>
-                ) : (
-                  <Button
-                    style={{ marginRight: "auto", marginLeft: "-87%" }}
-                    size="large"
-                    htmlType="submit"
-                    type="primary"
-                    raised
-                    disabled
-                  >
-                    Submit
-                  </Button>
-                )}
-              </Form.Item>
-            </Form>
-          </motion.div>
-        )}
+              <Form
+                className="form"
+                style={{ width: "100%" }}
+                form={form}
+                // name="addProduct"
+                onFinish={handleSubmit}
+              >
+                <Form.Item>
+                  <h4 style={{ marginRight: "auto", marginLeft: "-82%" }}>
+                    <u>Upload Audio file</u>..
+                  </h4>
+                  <input
+                    //   fileName="image"
+                    name="img"
+                    onChange={onChangeFile}
+                    type="file"
+                  />
+                </Form.Item>
+                <Form.Item>
+                  {fileName ? (
+                    <Button
+                      style={{ marginRight: "auto", marginLeft: "-87%" }}
+                      size="large"
+                      htmlType="submit"
+                      type="primary"
+                      raised
+                    >
+                      Submit
+                    </Button>
+                  ) : (
+                    <Button
+                      style={{ marginRight: "auto", marginLeft: "-87%" }}
+                      size="large"
+                      htmlType="submit"
+                      type="primary"
+                      raised
+                      disabled
+                    >
+                      Submit
+                    </Button>
+                  )}
+                </Form.Item>
+              </Form>
+            </motion.div>
+          )}
+        </AnimatePresence>
         <br />
         {loading ? <Loader /> : <Viewer transcription={arr} />}
+
         {loading ? null : <MindAudioPlayer audioUrl={audioUrl} />}
       </Col>
     </Row>
