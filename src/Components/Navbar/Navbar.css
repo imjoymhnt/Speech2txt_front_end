@@ -95,12 +95,12 @@
     border-radius: 0;
   }
 
-  .navbar-logo {
+  /* .navbar-logo {
     position: absolute;
     top: 0;
     left: 0;
     transform: translate(25%, 50%);
-  }
+  } */
 
   .menu-icon {
     display: block;
@@ -139,4 +139,13 @@
   Button {
     display: none;
   }
+}
+
+#logo {
+  width: 100%;
+  height: auto;
+  /* height: 30%;
+  width: 30%; */
+  margin: 0;
+  padding: 0;
 }
