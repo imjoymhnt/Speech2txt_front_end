@@ -127,9 +127,10 @@ const TranscriptionForm = () => {
           )}
         </AnimatePresence>
         <br />
-        {loading ? <Loader /> : <Viewer transcription={arr} />}
+        {loading ? <Loader /> : null}
+        {arr.length > 0 ? <Viewer transcription={arr} /> : null}
 
-        {loading ? null : <MindAudioPlayer audioUrl={audioUrl} />}
+        {arr.length > 0 ? <MindAudioPlayer audioUrl={audioUrl} /> : null}
       </Col>
     </Row>
   );

@@ -16,7 +16,7 @@ const Viewer = ({ transcription }) => {
           {/* <hr /> */}
           <br />
           <br />
-          {transcription.map(
+          {transcription && transcription.map(
             (spkr) =>
               spkr && (
                 <h4 className="spkr-txt">
