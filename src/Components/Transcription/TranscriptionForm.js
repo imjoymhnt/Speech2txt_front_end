@@ -9,6 +9,8 @@ import MindAudioPlayer from "../MindAudioPlayer";
 import Background from "../Animation/Background";
 
 const TranscriptionForm = () => {
+  let arr = [];
+  const [showViewer, setShowViewer] = useState(false)
   const [form] = Form.useForm();
   const [fileName, setFileName] = useState("");
   const [loading, setLoading] = useState(false);
@@ -19,6 +21,7 @@ const TranscriptionForm = () => {
   };
 
   const handleSubmit = async (values) => {
+    setShowViewer(false)
     setLoading(true);
     let fd = new FormData();
     fd.append("file", fileName);
@@ -35,12 +38,14 @@ const TranscriptionForm = () => {
         setTranscription(response.data.data);
         setAudioUrl(response.data.audioUrl);
         setLoading(false);
+        setFileName("")
+        setShowViewer(true)
       })
       .catch((err) => {
         console.log(err);
       });
   };
-  let arr = [];
+  
   if (transcription !== "") {
     arr = transcription.split("speaker");
     console.log(arr);
@@ -61,15 +66,16 @@ const TranscriptionForm = () => {
         <AnimatePresence>
           {loading ? null : (
             <motion.div
-              initial={{ x: -1000, opacity: 0 }}
+              initial={{ x: 0, opacity: 0 }}
               animate={{
-                x: [-1000, 80, 0],
+                // x: [-1000, 80, 0],
+                x: 0,
                 opacity: 1,
                 // rotate: [0, 5, -5, 5, 0],
                 // scale: [1, 2, 2, 1, 1],
               }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 2 }}
+              transition={{ duration: 0.8 }}
               // animate={{ rotate: 5 }}
               // transition={{ duration: 2 }}
               whileHover={{
@@ -128,9 +134,9 @@ const TranscriptionForm = () => {
         </AnimatePresence>
         <br />
         {loading ? <Loader /> : null}
-        {arr.length > 0 ? <Viewer transcription={arr} /> : null}
+        {arr.length > 0 && showViewer ? <Viewer transcription={arr} /> : null}
 
-        {arr.length > 0 ? <MindAudioPlayer audioUrl={audioUrl} /> : null}
+        {arr.length > 0 && showViewer ? <MindAudioPlayer audioUrl={audioUrl} /> : null}
       </Col>
     </Row>
   );

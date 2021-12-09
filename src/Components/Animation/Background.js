@@ -6,13 +6,13 @@ const Background = () => {
     <Particles
       id="tsparticles"
       options={{
-        fpsLimit: 60,
+        fpsLimit: 30,
         interactivity: {
           detectsOn: "canvas",
           events: {
             onClick: {
-              enable: true,
-              mode: "push",
+              enable: false,
+              mode: "",
             },
             onHover: {
               enable: true,
@@ -61,7 +61,7 @@ const Background = () => {
           number: {
             density: {
               enable: true,
-              value_area: 800,
+              value_area: 1600,
             },
             value: 80,
           },

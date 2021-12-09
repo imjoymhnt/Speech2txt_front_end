@@ -19,11 +19,11 @@ const Login = () => {
   return (
     <Row>
       <Background />
-      <AnimatePresence>
-        <motion.Col
-          initial={{ x: -500 }}
-          animate={{ x: 0 }}
-          transition={{ duration: 1.5 }}
+      {/* <AnimatePresence> */}
+        <Col
+          // initial={{ x: -500 }}
+          // animate={{ x: 0 }}
+          // transition={{ duration: 1.5 }}
           xs={{ span: 20, offset: 2 }}
           sm={{ span: 20, offset: 2 }}
           md={{ span: 20, offset: 2 }}
@@ -32,7 +32,7 @@ const Login = () => {
           xxl={{ span: 12, offset: 0 }}
         >
           <YourSvg className="side-image" />
-        </motion.Col>
+        </Col>
 
         <Col
           // initial={{ x: 1000 }}
@@ -120,7 +120,7 @@ const Login = () => {
             </Form.Item>
           </Form>
         </Col>
-      </AnimatePresence>
+      {/* </AnimatePresence> */}
     </Row>
   );
 };
